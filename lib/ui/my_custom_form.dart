@@ -66,11 +66,21 @@ class MyCustomFormState extends State<MycustomForm> {
                   String password = ctrlpassword.text;
 
                   if(username == '' || password == ''){
-                    print('กรุณาระบุ user or password');
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                        content: Text("กรุณาระบุ user or password"));
+                        });
                   }
 
                   else if(username != 'admin' || password != 'admin' ){
-                    print("user or password ไม่ถูกต้อง");
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                        content: Text("user or password ไม่ถูกต้อง"));
+                        });                    
                   }
 
                   if (username == 'admin' && password == 'admin'){

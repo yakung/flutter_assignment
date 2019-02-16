@@ -82,13 +82,22 @@ class Registerstate extends State<Register> {
                   String pass1 = ctrlpassword1.text;
                   String pass2 = ctrlpassword2.text;
                   if(mail == '' || pass1 == '' || pass2 == ''){
-                    AlertDialog(content: Text("data"));
-                    SnackBar(content: Text("data"));
+                    showDialog(
+                     context: context,
+                    builder: (context) {
+                        return AlertDialog(
+                        content: Text("กรุณาระบุข้อมูลให้ครบถ้วน"));
+                        });
                   }
                   else{
                     if(pass1 == pass2){
                       if(mail == 'admin'){
-                        
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                        content: Text("user นี้มีอยู่ในระบบแล้ว"));
+                        });
                       }else{
                         Navigator.push(context,MaterialPageRoute(builder: (context) => MycustomForm(), ),);
                       }
