@@ -30,7 +30,8 @@ class Registerstate extends State<Register> {
               child: TextFormField(
                   controller: ctrlemail,
                   decoration: InputDecoration(
-                  labelText: "Email",
+                  labelText: "User Id",
+                  hintText: "User Id",
                   icon: Icon(Icons.email),
                 ),
                 
@@ -45,7 +46,7 @@ class Registerstate extends State<Register> {
                 controller: ctrlpassword1,
                   decoration: InputDecoration(
                   labelText: "Password",
-                  hintText: "",
+                  hintText: "Password",
                   icon: Icon(Icons.https),
                 ),
 
@@ -60,8 +61,8 @@ class Registerstate extends State<Register> {
               child: TextFormField(
                 controller: ctrlpassword2,
                   decoration: InputDecoration(
-                  labelText: "Password",
-                  hintText: "",
+                  labelText: "Confirm Password",
+                  hintText: "Confirm Password",
                   icon: Icon(Icons.https),
                 ),
                 
@@ -96,11 +97,19 @@ class Registerstate extends State<Register> {
                       context: context,
                       builder: (context) {
                         return AlertDialog(
-                        content: Text("user นี้มีอยู่ในระบบแล้ว"));
+                        content: Text("User นี้มีอยู่ในระบบแล้ว"));
                         });
                       }else{
                         Navigator.push(context,MaterialPageRoute(builder: (context) => MycustomForm(), ),);
                       }
+                    }
+                    else if(pass1 != pass2){
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                        content: Text("Password ไม่ตรงกัน"));
+                        });
                     }
                   }
                 },

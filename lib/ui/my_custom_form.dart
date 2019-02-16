@@ -35,7 +35,7 @@ class MyCustomFormState extends State<MycustomForm> {
                   controller: ctrlUsername,
                   decoration: InputDecoration(
                   labelText: "User Id",
-                  hintText: "",
+                  hintText: "User Id",
                   prefixIcon: Icon(Icons.person),
                 ),
                 
@@ -49,7 +49,7 @@ class MyCustomFormState extends State<MycustomForm> {
                   controller: ctrlpassword,
                   decoration: InputDecoration(
                   labelText: "Password",
-                  hintText: "",
+                  hintText: "Password",
                   prefixIcon: Icon(Icons.https),
                 ),
                 

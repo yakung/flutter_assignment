@@ -32,6 +32,7 @@ class TabDemoState extends State<TabDemo> {
             data: Theme.of(context).copyWith(
         // sets the background color of the `BottomNavigationBar`
               canvasColor: Colors.blue,
+              primaryColorDark: Colors.blueGrey,
           ),
         child:BottomNavigationBar(
           items: [
@@ -55,14 +56,13 @@ class TabDemoState extends State<TabDemo> {
               icon: Icon(Icons.settings),
               title: Text("")
             ),
-
           ],
-
           onTap: (int index){
             setState(() {
               _currentIndex = index;
             });
           },
+          
         ),
       ),
       );
