@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'my_custom_form.dart';
+// import 'my_custom_form.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -30,6 +30,7 @@ class Registerstate extends State<Register> {
               child: TextFormField(
                   controller: ctrlemail,
                   decoration: InputDecoration(
+                  fillColor: Colors.blue,
                   labelText: "User Id",
                   hintText: "User Id",
                   icon: Icon(Icons.email),
@@ -82,7 +83,15 @@ class Registerstate extends State<Register> {
                   String mail = ctrlemail.text;
                   String pass1 = ctrlpassword1.text;
                   String pass2 = ctrlpassword2.text;
-                  if(mail == '' || pass1 == '' || pass2 == ''){
+                  if(mail == 'admin'){
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                        content: Text("User นี้มีอยู่ในระบบแล้ว"));
+                        });
+                      }
+                  else if(mail == '' || pass1 == '' || pass2 == ''){
                     showDialog(
                      context: context,
                     builder: (context) {
@@ -92,16 +101,8 @@ class Registerstate extends State<Register> {
                   }
                   else{
                     if(pass1 == pass2){
-                      if(mail == 'admin'){
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                        content: Text("User นี้มีอยู่ในระบบแล้ว"));
-                        });
-                      }else{
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => MycustomForm(), ),);
-                      }
+                        // Navigator.push(context,MaterialPageRoute(builder: (context) => MycustomForm(), ),);
+                        Navigator.pop(context);
                     }
                     else if(pass1 != pass2){
                     showDialog(

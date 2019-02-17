@@ -23,6 +23,7 @@ class TabDemoState extends State<TabDemo> {
       return Scaffold(
         appBar: AppBar(
           title: Text("Home"),
+
           centerTitle: true,
         ),
         body:Center(
@@ -32,9 +33,9 @@ class TabDemoState extends State<TabDemo> {
             data: Theme.of(context).copyWith(
         // sets the background color of the `BottomNavigationBar`
               canvasColor: Colors.blue,
-              primaryColorDark: Colors.blueGrey,
           ),
         child:BottomNavigationBar(
+          currentIndex: _currentIndex,
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.view_compact),
@@ -62,7 +63,6 @@ class TabDemoState extends State<TabDemo> {
               _currentIndex = index;
             });
           },
-          
         ),
       ),
       );
