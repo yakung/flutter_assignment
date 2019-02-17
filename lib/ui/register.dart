@@ -32,7 +32,8 @@ class Registerstate extends State<Register> {
                   decoration: InputDecoration(
                   labelText: "User Id",
                   hintText: "User Id",
-                  icon: Icon(Icons.email),
+                  labelStyle: TextStyle(color: Colors.blue),
+                  icon: Icon(Icons.email,color: Colors.blue,),
                 ),
                 
                 keyboardType: TextInputType.text,
@@ -47,7 +48,8 @@ class Registerstate extends State<Register> {
                   decoration: InputDecoration(
                   labelText: "Password",
                   hintText: "Password",
-                  icon: Icon(Icons.https),
+                  labelStyle: TextStyle(color: Colors.blue),
+                  icon: Icon(Icons.https,color: Colors.blue,),
                 ),
 
                 keyboardType: TextInputType.text,
@@ -62,8 +64,9 @@ class Registerstate extends State<Register> {
                 controller: ctrlpassword2,
                   decoration: InputDecoration(
                   labelText: "Confirm Password",
+                  labelStyle: TextStyle(color: Colors.blue,),
                   hintText: "Confirm Password",
-                  icon: Icon(Icons.https),
+                  icon: Icon(Icons.https,color: Colors.blue,),
                 ),
                 
                 keyboardType: TextInputType.text,

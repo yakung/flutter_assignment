@@ -12,6 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Login Page',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Colors.blue
+      ),
       routes:{
        "/" : (context) => MycustomForm(),
        "second" : (context) => Register(),
