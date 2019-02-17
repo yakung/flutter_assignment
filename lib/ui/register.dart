@@ -30,7 +30,6 @@ class Registerstate extends State<Register> {
               child: TextFormField(
                   controller: ctrlemail,
                   decoration: InputDecoration(
-                  fillColor: Colors.blue,
                   labelText: "User Id",
                   hintText: "User Id",
                   icon: Icon(Icons.email),
